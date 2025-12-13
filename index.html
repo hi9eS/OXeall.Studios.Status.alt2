@@ -1,65 +1,224 @@
-<!-- ===== CITY DAYX 2 ===== -->
-<div class="card" data-game="city-dayx-2">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OXeall Studios — Status (ALT2)</title>
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --panel: #111;
+  --panel-hover: #161616;
+  --border: #1f1f1f;
+  --text: #eaeaea;
+  --muted: #8b8b8b;
+  --ok: #1fc77a;
+  --warn: #f4c430;
+  --down: #ef4444;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+.wrapper {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.global-status {
+  background: #0f1f18;
+  border: 1px solid #163d2b;
+  color: var(--ok);
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+.card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.card-header:hover { background: var(--panel-hover); }
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.ok { background: var(--ok); }
+.warn { background: var(--warn); }
+.down { background: var(--down); }
+.card-title { font-weight: 500; }
+.components-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+.right {
+  color: var(--muted);
+  font-size: 13px;
+}
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+  border-top: 1px solid var(--border);
+}
+.card.open .card-body { max-height: 600px; }
+.components {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+.component span {
+  color: var(--muted);
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+<h1>OXeall Studios — Status</h1>
+<div class="subtitle">ALT2 · Roblox Games Status Monitor</div>
+
+<div class="global-status">
+✔ All released games are running normally.
+</div>
+
+<!-- CITY DAYX -->
+<div class="card">
   <div class="card-header">
     <div class="left">
-      <div class="status-dot"></div>
+      <div class="status-dot ok"></div>
+      <div class="card-title">City DayX</div>
+      <div class="components-count">5 components</div>
+    </div>
+    <div class="right">UpTime 99.02% — Stable</div>
+  </div>
+  <div class="card-body">
+    <div class="components">
+      <div class="component">Server <span>UpTime 98.6% — Stable</span></div>
+      <div class="component">Player Data <span>UpTime 99.1% — Stable</span></div>
+      <div class="component">APIs <span>UpTime 99.5% — Stable</span></div>
+      <div class="component">Inventory API <span>UpTime 99.0% — Stable</span></div>
+      <div class="component">Avatar Loading <span>UpTime 98.9% — Minor Issues</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CITY DAYX 2 -->
+<div class="card">
+  <div class="card-header">
+    <div class="left">
+      <div class="status-dot down"></div>
       <div class="card-title">City DayX 2</div>
-      <div class="components-count"></div>
+      <div class="components-count">5 components</div>
     </div>
-    <div class="right"></div>
+    <div class="right">UpTime 0.00% — Special Offline</div>
   </div>
-
   <div class="card-body">
     <div class="components">
-      <div class="component" data-comp="Server"><span>Server</span><span></span></div>
-      <div class="component" data-comp="Player Data"><span>Player Data</span><span></span></div>
-      <div class="component" data-comp="APIs"><span>APIs</span><span></span></div>
-      <div class="component" data-comp="Inventory API"><span>Inventory API</span><span></span></div>
-      <div class="component" data-comp="Avatar Loading"><span>Avatar Loading</span><span></span></div>
+      <div class="component">Server <span>Special Offline</span></div>
+      <div class="component">Player Data <span>Special Offline</span></div>
+      <div class="component">APIs <span>Special Offline</span></div>
+      <div class="component">Inventory API <span>Special Offline</span></div>
+      <div class="component">Avatar Loading <span>Special Offline</span></div>
     </div>
   </div>
 </div>
 
-<!-- ===== RUSSIAN 2071 TOWN ===== -->
-<div class="card" data-game="russian-2071-town">
+<!-- RUSSIAN 2071 TOWN -->
+<div class="card">
   <div class="card-header">
     <div class="left">
-      <div class="status-dot"></div>
+      <div class="status-dot ok"></div>
       <div class="card-title">Russian 2071 Town</div>
-      <div class="components-count"></div>
+      <div class="components-count">5 components</div>
     </div>
-    <div class="right"></div>
+    <div class="right">UpTime 98.44% — Stable</div>
   </div>
-
   <div class="card-body">
     <div class="components">
-      <div class="component" data-comp="Server"><span>Server</span><span></span></div>
-      <div class="component" data-comp="Player Data"><span>Player Data</span><span></span></div>
-      <div class="component" data-comp="APIs"><span>APIs</span><span></span></div>
-      <div class="component" data-comp="Inventory API"><span>Inventory API</span><span></span></div>
-      <div class="component" data-comp="Avatar Loading"><span>Avatar Loading</span><span></span></div>
+      <div class="component">Server <span>UpTime 98.1% — Stable</span></div>
+      <div class="component">Player Data <span>UpTime 98.7% — Stable</span></div>
+      <div class="component">APIs <span>UpTime 99.0% — Stable</span></div>
+      <div class="component">Inventory API <span>UpTime 98.5% — Stable</span></div>
+      <div class="component">Avatar Loading <span>UpTime 97.9% — Minor Issues</span></div>
     </div>
   </div>
 </div>
 
-<!-- ===== RACING FRIENDS ===== -->
-<div class="card" data-game="racing-friends">
+<!-- RACING FRIENDS -->
+<div class="card">
   <div class="card-header">
     <div class="left">
-      <div class="status-dot"></div>
+      <div class="status-dot ok"></div>
       <div class="card-title">Racing Friends</div>
-      <div class="components-count"></div>
+      <div class="components-count">5 components</div>
     </div>
-    <div class="right"></div>
+    <div class="right">UpTime 99.31% — Stable</div>
   </div>
-
   <div class="card-body">
     <div class="components">
-      <div class="component" data-comp="Server"><span>Server</span><span></span></div>
-      <div class="component" data-comp="Player Data"><span>Player Data</span><span></span></div>
-      <div class="component" data-comp="APIs"><span>APIs</span><span></span></div>
-      <div class="component" data-comp="Inventory API"><span>Inventory API</span><span></span></div>
-      <div class="component" data-comp="Avatar Loading"><span>Avatar Loading</span><span></span></div>
+      <div class="component">Server <span>UpTime 99.4% — Stable</span></div>
+      <div class="component">Player Data <span>UpTime 99.2% — Stable</span></div>
+      <div class="component">APIs <span>UpTime 99.6% — Stable</span></div>
+      <div class="component">Inventory API <span>UpTime 99.0% — Stable</span></div>
+      <div class="component">Avatar Loading <span>UpTime 98.8% — Stable</span></div>
     </div>
   </div>
 </div>
+
+</div>
+
+<script>
+document.querySelectorAll(".card-header").forEach(h => {
+  h.addEventListener("click", () => {
+    h.parentElement.classList.toggle("open");
+  });
+});
+</script>
+
+</body>
+</html>
