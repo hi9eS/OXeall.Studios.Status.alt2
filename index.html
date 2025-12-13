@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OXeall Studios — Status (ALT2)</title>
 
+<style>
+/* ===== BASE ===== */
+:root {
+  --bg: #0a0a0a;
+  --panel: #111;
+  --panel-hover: #161616;
+  --border: #1f1f1f;
+  --text: #eaeaea;
+  --muted: #8b8b8b;
+
+  --ok: #1fc77a;
+  --warn: #f4c430;
+  --down: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+/* ===== LAYOUT ===== */
+.wrapper {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+/* ===== GLOBAL STATUS ===== */
+.global-status {
+  background: #0f1f18;
+  border: 1px solid #163d2b;
+  color: var(--ok);
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+/* ===== ACCORDION ===== */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.card-header:hover {
+  background: var(--panel-hover);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ok);
+}
+
+.card-title {
+  font-weight: 500;
+}
+
+.components-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.right {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ===== COLLAPSIBLE BODY ===== */
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+  border-top: 1px solid var(--border);
+}
+
+.card.open .card-body {
+  max-height: 500px;
+}
+
+.components {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== COMPONENT ROW ===== */
+.component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.component span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ===== STATUS COLORS ===== */
+.ok { background: var(--ok); }
+.warn { background: var(--warn); }
+.down { background: var(--down); }
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <h1>OXeall Studios — Status</h1>
+  <div class="subtitle">
+    ALT2 · Roblox Games Status Monitor
+  </div>
+
+  <div class="global-status">
+    ✔ We’re fully operational — no known issues.
+  </div>
+
+  <!-- ===== CITY DAYX ===== -->
+  <div class="card">
+    <div class="card-header">
+      <div class="left">
+        <div class="status-dot ok"></div>
+        <div class="card-title">City DayX</div>
+        <div class="components-count">3 components</div>
+      </div>
+      <div class="right">99.0% uptime</div>
+    </div>
+
+    <div class="card-body">
+      <div class="components">
+        <div class="component">
+          Game servers
+          <span>Operational</span>
+        </div>
+        <div class="component">
+          APIs
+          <span>Operational</span>
+        </div>
+        <div class="component">
+          Avatar loading
+          <span>Operational</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== APIs ===== -->
+  <div class="card">
+    <div class="card-header">
+      <div class="left">
+        <div class="status-dot ok"></div>
+        <div class="card-title">Global APIs</div>
+        <div class="components-count">2 components</div>
+      </div>
+      <div class="right">99.17% uptime</div>
+    </div>
+
+    <div class="card-body">
+      <div class="components">
+        <div class="component">
+          Matchmaking API
+          <span>Operational</span>
+        </div>
+        <div class="component">
+          Inventory API
+          <span>Operational</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll(".card-header").forEach(header => {
+  header.addEventListener("click", () => {
+    header.parentElement.classList.toggle("open");
+  });
+});
+</script>
+</body>
+</html>
